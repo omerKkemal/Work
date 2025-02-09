@@ -50,8 +50,8 @@ class Setting:
         self.EXCEL_DIR = "data/excel/"
 
         # email setting
-        self.EMAIL_PASSWORD = 'zfhh umpy iiuj crpp'
-        self.EMAIL = 'omerkemal2019@gmail.com'
+        self.EMAIL_PASSWORD = 'your password'
+        self.EMAIL = 'your email(gmail)'
         self.SMTP_LINK = 'smtp.gmail.com'
         self.SMTP_PORT = 587
         self.EMAIL_TYPE = "html"
