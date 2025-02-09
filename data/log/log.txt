@@ -1,0 +1,23 @@
+[  2025-01-21 20:50:11.512267  ] : login succsesfully --> [['8mlxf', 'admin', 'admin']]
+[  2025-01-21 20:52:48.733689  ] : (sqlite3.OperationalError) no such column: resource.valid
+[SQL: SELECT resource.id AS resource_id, resource.section_id AS resource_section_id, resource.description AS resource_description, resource.file_name AS resource_file_name, resource.path AS resource_path, resource.post_t AS resource_post_t, resource.post_a AS resource_post_a, resource.resource_type AS resource_resource_type, resource.valid AS resource_valid 
+FROM resource]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[  2025-01-21 21:02:31.263888  ] : (sqlite3.OperationalError) no such column: resource.valid
+[SQL: SELECT resource.id AS resource_id, resource.section_id AS resource_section_id, resource.description AS resource_description, resource.file_name AS resource_file_name, resource.path AS resource_path, resource.post_t AS resource_post_t, resource.post_a AS resource_post_a, resource.resource_type AS resource_resource_type, resource.valid AS resource_valid 
+FROM resource]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[  2025-01-21 21:07:20.569829  ] : (sqlite3.OperationalError) no such column: resource.valid
+[SQL: SELECT resource.id AS resource_id, resource.section_id AS resource_section_id, resource.description AS resource_description, resource.file_name AS resource_file_name, resource.path AS resource_path, resource.post_t AS resource_post_t, resource.post_a AS resource_post_a, resource.resource_type AS resource_resource_type, resource.valid AS resource_valid 
+FROM resource]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[  2025-01-23 20:34:11.732127  ] : name 'grtlist' is not defined
+[  2025-01-23 20:34:42.664250  ] : name 'grtlist' is not defined
+[  2025-01-23 20:35:36.729660  ] : name 'grtlist' is not defined
+[  2025-01-23 20:36:59.546551  ] : login succsesfully --> [['63vdx', 'admin', 'admin']]
+[  2025-01-23 20:37:07.624220  ] : name 'grtlist' is not defined
+[  2025-01-23 20:38:31.828433  ] : login succsesfully --> [['63vdx', 'admin', 'admin']]
+[  2025-01-23 20:38:39.431351  ] : name 'grtlist' is not defined
+[  2025-01-23 21:26:57.643610  ] : login succsesfully --> [['63vdx', 'admin', 'admin']]
+[  2025-01-23 21:27:06.186825  ] : name 'grtlist' is not defined
+[  2025-01-23 21:28:08.577367  ] : name 'grtlist' is not defined

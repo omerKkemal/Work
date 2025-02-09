@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+</head>
+<body aria-disabled="true">
+<section class="w3-card">
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+  <header id="content1" style="display: none;">
+    <div class="w3-round w3-display-container">
+      <a href="/" onclick="loading_animation();"><img width="15%" class="w3-display-topleft" src="{{ url_for('static', filename='img/back.svg') }}" alt=""></a>
+      <img class="round" width="100%" src="{{ url_for('static', filename='img/nur.jpg') }}">
+    </div>
+    </div>
+  </header>
+  <main class="main2" id="content2" style="display: none;">
+    <div class="container">
+      <span class="ss round w3-tag w3-jumbo w3-green">L</span>
+      <span class="ss round w3-tag w3-jumbo w3-green">O</span>
+      <span class="ss round w3-tag w3-jumbo w3-green">G</span>
+      <span class="ss round w3-tag w3-jumbo w3-green">I</span>
+      <span class="ss round w3-tag w3-jumbo w3-green">N</span>
+      <form action="/login" method="post">
+        <div class="input-data">
+          <p style="text-align: initial;">UserName</p>
+          <input name="username" type="text" required>
+        </div>
+        <div class="input-data">
+          <p style="text-align: initial;">password</p>
+          <input name="password" type="password" required>
+        </div>
+        <input class="btn" type="submit" value="Login" onclick="loading_animation()">
+      </form>
+    </div>
+  </main>
+</section>
+</div>
+<script src=" {{url_for('static',filename='js/action.js')}} "></script>
+</body>
+</html>

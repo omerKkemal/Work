@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+</head>
+<body>
+<section class="w3-card">
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+  <header id="content1" style="display: none;">
+    <div class="w3-round w3-display-container">
+        <img class="round" width="100%" src="{{ url_for('static', filename='img/nur.jpg') }}">
+    </div>
+  </header>
+  <main id="content2" style="display: none;" class="main3">
+    <div class="w3-card-4 w3-container round welcom-message">
+        <h1>Welcome</h1>
+        <p>Welcome to nur Al-huda! We are delighted to have you with us.</p>
+        <p>Our platform is designed to provid simplest and user-friendly expirence to help you stay organized and focused on what what truly matters.</p>
+        <p>Let's make great thing happen together!</p>
+    </div>
+    <div class="w3-container">
+        <p>Let's start!</p>
+        <span><a class="text btn" onclick="loading_animation();" href="/login">Login</a></span>
+        <span style="padding-left: 5px; padding-right: 5px;">or</span>
+        <span><a class="text btn" onclick="loading_animation();" href="#">About</a></span>
+    </div>
+  </main>
+</section>
+</div>
+<script src=" {{url_for('static',filename='js/action.js')}} "></script>
+<script src=" {{url_for('static',filename='js/api.js')}} "></script>
+</body>
+</html>

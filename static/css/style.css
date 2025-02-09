@@ -1,0 +1,204 @@
+body {
+    font-family: 'Edu AU VIC WA NT Pre', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    animation: spin 1.75s linear infinite;
+}
+
+section {
+    height: 1020px;
+    width: 480px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #ffffff;
+    overflow-x: auto;
+    /*rgb(158, 69, 241);*/
+}
+header {
+    padding-bottom: 0px;
+}
+
+main{
+    margin-top: 40px;
+    padding-top: 10px;
+    background-color: #ffffff;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 15px 30px;
+    min-height: 100px;
+}
+
+.main1 {
+    .Buttons{
+        display: flex;
+        padding: 10px;
+        .Button{
+            background-color: rgb(247, 247, 74);
+            flex: 1;
+            height: 110px;
+            padding: 15px;
+            border-radius: 10px;
+            background: white;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+.alerts{
+    text-align: initial;
+    padding: 15px;
+    h2{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #c28bfa;
+    }
+    .alert{
+        display: flex;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+.main2 {
+    .btn {
+        border-radius: 10px;
+        padding: 8px 14px;
+        cursor: pointer;
+        border: 2px solid #0f172a;
+        box-shadow: 0 0 0 0 white,
+        5px 5px 0 0 #0f172a;
+        transition-duration: 200ms;
+    }
+    .input-data input{
+        border-radius: 30px;
+        height: 40px;
+        width: 350px;
+        font-size: 17px;
+        border: #000 solid 3px;
+        box-shadow: 0 0 0 0 white,
+        5px 5px 0 0 #0f172a;
+        transition-duration: 200ms;   
+    }
+    .input-data p{
+        padding-left: 70px;
+    }
+    .input-data{
+        margin-bottom: 10px;
+    }
+}
+
+.main3 {
+    .welcom-message h1{
+        font-size: 70px;
+    }
+    .welcom-message p{
+        text-align: initial;
+        margin: 20px;
+    }
+    .welcom-message{
+        margin: 20px;
+    }
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: 2px solid #0f172a;
+    box-shadow: 0 0 0 0 white,
+    5px 5px 0 0 #0f172a;
+}
+
+.btn-new{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 0 #313337,
+    5px 5px 0 0 white;
+}
+
+input[type='text']{
+    padding: 30px;
+}
+
+input[type='password']{
+    padding: 30px;
+}
+
+.ss {
+    box-shadow: 0 0 0 0 white,
+        5px 5px 0 0 #0f172a;
+    border: #000 solid 2px;
+}
+
+.text{
+    text-decoration: none;
+    font-style: oblique;
+    font-size: 13px;
+}
+
+.round{
+    border: #000000 solid 2px;
+    border-radius: 15px ;
+    text-decoration: none;
+}
+.round-image {
+    width: 100%; /* Set the desired size */
+    border-radius: 30px; /* This makes it round */
+    object-fit: cover; /* Ensures the image fills the box without stretching */
+}
+
+.round2{
+    border: #c7c5c5 solid 2px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.logout {
+    margin: 20px 20px;
+}
+h1 {
+    font-weight: 700; /* Bold */
+    font-size: 2.5rem;
+}
+
+p {
+    font-weight: 400; /* Regular */
+    font-size: 1rem;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,173 @@
+session.query(table).filter(
+    table.column == 'check'
+)
+
+# To drop the table
+Base.metadata.drop_all(engine)
+engine.dispose()
+
+
+
+request.form.getlist('mylist_of_options')
+
+<form>
+    <select id="options" name="options" multiple>
+        <option value="my_option_value"></option>
+    </select>
+    <input type="submit">
+</form>
+
+
+<label for="options">Subject</label>
+            <select id="options" name="subject_options" multiple>
+                {% for subject in subjects %}
+                <option value="{{ subject }}">{{ subject }}</option>
+                {% endfor %}
+            </select>
+            <label for="options2">Grade</label>
+            <select id="options2" name="grade" multiple>
+                {% for grade in grades %}
+                <option value="{{ grade }}">{{ grade }}</option>
+                {% endfor %}
+            </select>
+            <label for="options3">Sections</label>
+            <select id="options3" name="section" multiple>
+                {% for section in sections %}
+                <option value="{{ section }}">{{ section }}</option>
+                {% endfor %}
+            </select>
+
+
+# Step 1: Write new data to the JSON file
+'''new_temporary_data = {
+    "session_id": "abc123",
+    "is_logged_in": True
+}'''
+# write_into_json(new_temporary_data, 'Temporary')
+
+# Step 2: Read and display the current data from the JSON file
+# data_object, data_dict = read_json()
+# print("Current Data (Object):", data_object)
+# print("Current Data (Dictionary):", data_dict)
+
+# Step 3: Write additional data to the 'Permanent' section
+'''new_permanent_data = {
+    "username": "user1",
+    "role": "admin"
+}'''
+# write_into_json(new_permanent_data, 'Permanent')
+
+# Step 4: Read and display the updated data
+# data_object, data_dict = read_json()
+# print("Updated Data (Object):", data_object)
+# print("Updated Data (Dictionary):", data_dict)
+
+# Step 5: Delete a key from the 'Temporary' section
+# delete_success = delete_from_json('Temporary', 'session_id')
+# if delete_success:
+#     print("Successfully deleted 'session_id' from 'Temporary'.")
+# else:
+#     print("Failed to delete 'session_id' from 'Temporary'.")
+
+# Step 6: Read and display the data after deletion
+# data_object, data_dict = read_json()
+# print("Data After Deletion (Object):", data_object)
+# print("Data After Deletion (Dictionary):", data_dict)
+    <!-- Include Google Fonts for Handwritten Style -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Patrick Hand', sans-serif; /* Handwritten font */
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        #loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #333;
+            border-top: 5px solid #00f;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #content {
+            display: none;
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #333;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            border: 2px solid #ddd;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #00f;
+            border-color: #00f;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>

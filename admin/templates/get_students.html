@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+</head>
+<body>
+<section class="w3-card">
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+  <header id="content1" style="display: none;">
+    <div class="w3-display-container">
+      <a href="/admin/panal" onclick="loading_animation();"><img width="15%" class="w3-display-topleft" src="{{ url_for('static', filename='img/back.svg') }}" alt=""></a>
+      <img width="100%" class="round2" src="{{ url_for('static', filename='img/logo.avif') }}">
+    </div>
+  </header>
+  <main id="content2" class="main4" style="display: none;">
+    <div class="container" style="margin-top: 50px;">
+        <h4><i>Students in Grade {{grade}} Section {{section}}</i></h4>
+        <table>
+            <thead>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Actions
+                </th>
+            </thead>
+            <tbody>
+                {% for student in students | getList %}
+                <tr>
+                    <td>{{ student[1] }} {{ student[2] }} {{ student[3] }}</td>
+                    <td>
+                      <div class="dropdown" style="margin-right: 20px;">
+                        <a class="btn text" style="background-color: rgb(123, 163, 244);" href="/admin/panal/update_options/{{ student[0] }}">Update</a>
+                      </div>
+                      <a class="btn" style="background-color: rgb(251, 127, 127); text-decoration: none;" onclick="_delete('{{ student[0] }}',9);">&#128465</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn text" style="background-color: rgb(131, 244, 123);" href="/admin/panal/add_student/{{ grade }}/{{ section }}">+</a>
+    </div>
+  </main>
+</section>
+</div>
+<script src=" {{url_for('static',filename='js/action.js')}} "></script>
+<script src=" {{url_for('static',filename='js/api.js')}} "></script>
+</body>
+</html>
