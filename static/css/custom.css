@@ -147,6 +147,78 @@ form{
     display: block;
 }
 
+.upload-container {
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box.dragover {
+    border-color: #009999;
+    background-color: #f0f8ff;
+}
+
+.upload-box img {
+    width: 50px;
+}
+
+.upload-box p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.browse-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #00cccc;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.browse-btn:hover {
+    background-color: white;
+    color: #00cccc;
+    border: 1px solid #00cccc;
+}
+
+#file-input {
+    display: none;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 @keyframes fadInOut{
     0%{
         opacity: 0;

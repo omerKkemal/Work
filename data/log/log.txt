@@ -30,3 +30,9 @@ The browser instead transmitted some file names. This was submitted: 'script.js'
 [  2025-02-13 01:15:40.728657  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
 [  2025-02-13 01:16:15.960180  ] : 'Setting' object has no attribute 'RESOURCE_PATH'
 [  2025-02-13 01:17:24.446505  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
+[  2025-02-13 02:43:26.629183  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
+[  2025-02-13 02:59:13.374548  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
+[  2025-02-13 03:19:30.455357  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
+[  2025-02-13 03:22:44.637060  ] : expected token ',', got 'static'
+[  2025-02-13 03:23:45.895914  ] : expected token ',', got 'static'
+[  2025-02-13 03:23:52.332000  ] : expected token ',', got 'static'

@@ -24,38 +24,83 @@
   </header>
   <main id="content2" class="main4" style="display: none;">
 <div class="w3-container">
-    <div class="w3-card">
+    <div>
         <div class="card-header bg-secondary text-white">
             Resource Upload Form
         </div>
-        <div>
-            <form action="/admin/panal/add_resource" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label for="resource">Resource File</label>
-                    <input type="file" class="ss round" id="resource" name="files" required>
+        <div class="form-container">
+          <form action="/admin/panal/add_resource" method="POST" enctype="multipart/form-data">
+              <label for="resource">Resource File</label>
+              <label for="file-input">
+                <div class="upload-box" id="drop-area">
+                    <img src=" {{url_for('static',filename='img/upload_icon.png') }}" alt="Upload Icon">
+                    <p>Drag & Drop files here</p>
+                    <p>or</p>
+                    <span class="browse-btn">Browse Files</span>
                 </div>
-                <div>
-                    <label for="description">Description</label>
-                    <textarea class="ss round" id="description" name="description" rows="3" required></textarea>
-                </div>
-                <select name="resource_type">
-                    {% for x in resource %}
-                    <option value="{{ x }}">{{ x }}</option>
-                    {% endfor %}
-                </select>
-                <select name="section">
-                    {% for x in sections %}
-                    <option value="{{ x[0] }}">{{ x[1] }} {{ x[2] }}</option>
-                    {% endfor %}
-                </select>
-                <button type="submit" class="btn" style="background-color: #00cccc; border-color: #00cccc;">Upload</button>
-            </form>
-        </div>
+            </label>
+            <input type="file" id="file-input" name="files" required multiple>
+            <div id="file-name" class="file-name">No file selected</div>
+  
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="3" required></textarea>
+              <br>
+            <div style="border: 30px;" class="list">
+              <select class="item" name="resource_type" id="resource_type">
+                  {% for x in resource %}
+                  <option value="{{ x }}">{{ x }}</option>
+                  {% endfor %}
+              </select>
+  
+              
+              <select class="item" name="section" id="section">
+                  {% for x in sections %}
+                  <option value="{{ x[0] }}">{{ x[1] }} {{ x[2] }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+              <br><button type="submit" class="btn">Upload</button>
+          </form>
+      </div>
     </div>
 </div>
 </main>
 </section>
 </div>
+<script>
+  const dropArea = document.getElementById("drop-area");
+  const fileInput = document.getElementById("file-input");
+  const fileNameDisplay = document.getElementById("file-name");
+
+  dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dropArea.classList.add("dragover");
+  });
+
+  dropArea.addEventListener("dragleave", () => {
+      dropArea.classList.remove("dragover");
+  });
+
+  dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      dropArea.classList.remove("dragover");
+
+      if (event.dataTransfer.files.length > 0) {
+          fileInput.files = event.dataTransfer.files;
+          updateFileName();
+      }
+  });
+
+  fileInput.addEventListener("change", updateFileName);
+
+  function updateFileName() {
+      if (fileInput.files.length > 0) {
+          fileNameDisplay.textContent = Array.from(fileInput.files).map(f => f.name).join(", ");
+      } else {
+          fileNameDisplay.textContent = "No file selected";
+      }
+  }
+</script>
 <script src=" {{url_for('static',filename='js/action.js')}} "></script>
 <script src=" {{url_for('static',filename='js/api.js')}} "></script>
 </body>
