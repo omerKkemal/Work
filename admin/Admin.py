@@ -524,19 +524,36 @@ def add_resourc():
             role = session['role']
             if request.method == "POST":
                 file_property = request.files['files']
-                description = request.fprm['description']
+                description = request.form['description']
                 resource_type = request.form['resource_type']
                 userID = session['userID']
                 sections_id = request.form['section']
                 if session['role'] == "admin":
-                    valid = 1
-                    resourcs = Resource(
-                        var.ID(),sections_id,description,
-                        file_property.file_name,var.RESOURCE_PATH,
-                        "None",userID,resource_type,valid
-                    )
-                    if allowed_file(filename=file_property.file_name):
-                        file_property.save(os.path.join(var.RESOURCE_PATH, file.filename))
+                    if allowed_file(filename=file_property.filename):
+                        if resource_type == var.RESOURCE_TYPE[1] or resource_type == var.RESOURCE_TYPE[0]:
+                            file_property.save(
+                                os.path.join(
+                                    var.WORK_SHEET_PATH,
+                                    file_property.filename
+                                )
+                            )
+                            PATH = var.WORK_SHEET_LINK_PATH
+
+                        elif resource_type == var.RESOURCE_TYPE[2]:
+                            file_property.save(
+                                os.path.join(
+                                    var.EXTRA_RESOURCE_PATH,
+                                    file_property.filename
+                                )
+                            )
+                            PATH = var.EXTRA_RESOURCE_LINK_PATH
+                        valid = 1
+
+                        resourcs = Resource(
+                            var.ID(),sections_id,description,
+                            file_property.filename,PATH,
+                            "None",userID,resource_type,valid
+                        )
                         _session.add(resourcs)
                         _session.commit()
                         return 'succsess'
@@ -545,7 +562,7 @@ def add_resourc():
                     valid = 0
                     resourcs = Resource(
                         var.ID(),sections_id,description,
-                        file_property.file_name,var.RESOURCE_PATH,
+                        file_property.filename,var.RESOURCE_FULL_PATH,
                         userID,"None",resource_type,valid
                     )
                     _session.add(resourcs)
@@ -553,7 +570,7 @@ def add_resourc():
                     return 'succsess'
             else:
                 sections = getlist(_session.query(Sections).all())
-                return render_template("uplaod_resource.html",sections=sections)
+                return render_template("uplaod_resource.html",sections=sections,resource=var.RESOURCE_TYPE)
         else:
             return 'i am the problam'
     except Exception as e:

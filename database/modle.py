@@ -302,7 +302,7 @@ class Resource(Base):
         self.file_name = file_name
         self.path = path
         self.post_t = post_t
-        self.post_a = post_by
+        self.post_a = post_a
         self.resource_type = resource_type
         self.valid = valid
 
