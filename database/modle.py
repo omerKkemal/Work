@@ -308,6 +308,6 @@ class Resource(Base):
 
 
     def __repr__(self):
-        resource = f'({self.ID}-{self.subject_id}-{self.description}-{self.file_name}-{self.path}-{self.post_t}-{self.post_a}-{self.resource_type})'
+        resource = f'({self.ID}-{self.section_id}-{self.description}-{self.file_name}-{self.path}-{self.post_t}-{self.post_a}-{self.resource_type})'
         return resource
 

@@ -84,20 +84,21 @@ class Setting:
         self.TEMPLATE_FOLDER = 'templates'
 
         # resource config
-        self.RESOURCE_PATH = f'{self.STATIC_FOLDE_PATH}/resources'
-        self.WORK_SHEET_FOLDER = '/work_sheet'
-        self.EXTRA_RESOURCE_LINK_PATH = f'{self.RESOURCE_PATH}/extra_resources'
-        self.WORK_SHEET_LINK_PATH = f'{self.RESOURCE_PATH}/work_sheet'
+        self.RESOURCE_PATH = 'resources'
+        self.WORK_SHEET_FOLDER = 'work_sheet'
+        self.EXTRA_RESOURCE_FOLDER = 'extra_resources'
+        self.EXTRA_RESOURCE_LINK_PATH = f'{self.RESOURCE_PATH}/{self.EXTRA_RESOURCE_FOLDER}'
+        self.WORK_SHEET_LINK_PATH = f'{self.RESOURCE_PATH}/{self.WORK_SHEET_FOLDER}'
         self.RESOURCE_FULL_PATH = 'C:\\Users\\hacker\\PycharmProjects\\Work\\static\\resources'
-        self.EXTRA_RESOURCE_PATH = f'{self.RESOURCE_FULL_PATH}/extra_resources'
-        self.WORK_SHEET_PATH = f'{self.RESOURCE_FULL_PATH}/work_sheet'
+        self.EXTRA_RESOURCE_PATH = f'{self.RESOURCE_FULL_PATH}\\{self.EXTRA_RESOURCE_FOLDER}'
+        self.WORK_SHEET_PATH = f'{self.RESOURCE_FULL_PATH}\\{self.WORK_SHEET_FOLDER}'
 
         # Access levels for teachers
         self.ACCSESS = ['ReadOnly', 'Read&Write', 'Forbidden']
         self.SUBJECT_PRIVLAGE = ['ReadOnly','Read&Write']
 
 
-        self.ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg', 'gif','pdf','pp','doc','docx','xls','xlsx'}
+        self.ALLOWED_EXTENSIONS = {'txt', 'png', 'jpg', 'jpeg', 'gif','pdf','pp','doc','docx','xls','xlsx','pptx'}
 
     def ID(self,n=5):
         """

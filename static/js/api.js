@@ -1,5 +1,5 @@
 var loc = location.origin
-var endPointes = [//lenget 11 or 10 <-- (index start at 0)
+var endPointes = [//lenget 12 or 11 <-- (index start at 0)
     '/admin/panal/add_students',
     '/admin/panal/add_student/',// need grade and section(parmeter: section and grade)
     '/admin/panal/info/',// get section and grade info or list of theachers(parmater: teacher or student)
@@ -11,6 +11,7 @@ var endPointes = [//lenget 11 or 10 <-- (index start at 0)
     '/admin/panal/edit_teacher_info/',// edit basic info teacher(parmetr: id)
     '/admin/panal/delete_student',// delete student by ID(parmetr: id)
     '/admin/panal/delete_teacher',// delete teacher by ID(parmetr: id)
+    '/admin/panal/delete_resource'
 ]
 
 // Delete

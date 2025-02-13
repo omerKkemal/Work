@@ -36,3 +36,30 @@ The browser instead transmitted some file names. This was submitted: 'script.js'
 [  2025-02-13 03:22:44.637060  ] : expected token ',', got 'static'
 [  2025-02-13 03:23:45.895914  ] : expected token ',', got 'static'
 [  2025-02-13 03:23:52.332000  ] : expected token ',', got 'static'
+[  2025-02-13 17:21:51.264104  ] : login succsesfully --> [['rj93V', 'admin', 'admin']]
+[  2025-02-13 19:51:12.314931  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-13 19:52:27.210693  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-13 19:52:53.874910  ] : Encountered unknown tag 'endif'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endfor'. The innermost block that needs to be closed is 'for'.
+[  2025-02-13 19:56:17.402857  ] : 'Resource' object has no attribute 'subject_id'
+[  2025-02-14 01:43:30.507238  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 01:50:01.665872  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 01:52:24.542120  ] : Error occurred: argument of type 'Resource' is not iterable
+[  2025-02-14 01:52:42.329887  ] : Error occurred: argument of type 'Resource' is not iterable
+[  2025-02-14 01:53:18.799208  ] : Error occurred: argument of type 'Resource' is not iterable
+[  2025-02-14 01:55:27.524773  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 01:56:00.776271  ] : Error occurred: Class 'builtins.list' is not mapped
+[  2025-02-14 01:57:19.269065  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 01:57:49.499149  ] : Error occurred: Class 'builtins.list' is not mapped
+[  2025-02-14 01:59:20.101082  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 01:59:41.446998  ] : Error occurred: Class 'builtins.list' is not mapped
+[  2025-02-14 02:02:46.546474  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 02:03:04.943785  ] : Error occurred: Class 'builtins.list' is not mapped
+[  2025-02-14 02:04:43.836964  ] : Error occurred: Class 'builtins.list' is not mapped
+[  2025-02-14 04:58:11.427427  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 05:16:00.123645  ] : Error occurred: list index out of range
+[  2025-02-14 05:17:02.139381  ] : Error occurred: [WinError 5] Access is denied: 'C:\\Users\\hacker\\PycharmProjects\\Work\\static\\resources\\work_sheet'
+[  2025-02-14 05:22:39.952923  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 05:23:01.073237  ] : Error occurred: [WinError 5] Access is denied: 'C:\\Users\\hacker\\PycharmProjects\\Work\\static\\resources\\work_sheet'
+[  2025-02-14 05:30:45.137017  ] : Error occurred: [WinError 5] Access is denied: 'C:\\Users\\hacker\\PycharmProjects\\Work\\static\\resources\\work_sheet'
+[  2025-02-14 05:43:37.587890  ] : login succsesfully --> [['oixeD', 'admin', 'admin']]
+[  2025-02-14 05:43:53.326553  ] : Error occurred: [WinError 5] Access is denied: 'C:\\Users\\hacker\\PycharmProjects\\Work\\static\\resources\\work_sheet'

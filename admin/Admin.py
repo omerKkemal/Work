@@ -623,6 +623,47 @@ def delete_student():
         _session.close()  # Ensure session is closed
 
 
+@Admin.route('/admin/panal/delete_resource', methods=['POST'])
+def delete_resource():
+    try:
+        if 'username' in session:
+            if session['role'] == 'admin':
+                data = request.get_json()
+                resource = getlist(_session.query(Resource).filter_by(ID=data['id']).all())
+                
+                print('omer',resource)
+
+                if resource is None:
+                    return {'message': 'Resource not found'}, 404  # Return error if Teacher doesn't exist
+                
+                if 'work_sheet' in resource[0][4]:
+                    path = var.WORK_SHEET_PATH
+                else:
+                    path = os.path.join(var.EXTRA_RESOURCE_PATH ,resource[0][3])
+                if os.path.exists(path):
+                    os.remove(path)
+                    print('path',path)
+                delete = _session.query(Resource).filter_by(ID=data['id']).first()
+                _session.delete(delete)
+                
+                _session.commit()
+
+                return {'message': 'Resource deleted successfully'}, 200  # Return success message as JSON
+
+            else:
+                return {'message': 'Unauthorized access'}, 403  # Return unauthorized status if user is not admin
+        else:
+            return {'message': 'Not logged in'}, 401  # Return not authorized status if session doesn't exist
+
+    except Exception as e:
+        _session.rollback()  # Rollback if any error occurs
+        var.log(f"Error occurred: {e}")
+        return {'message': 'An error occurred while deleting Resource'}, 500  # Return general error response
+
+    finally:
+        _session.close()  # Ensure session is closed
+
+
 @Admin.route('/admin/panal/delete_teacher', methods=['POST'])
 def delete_teacher():
     try:
