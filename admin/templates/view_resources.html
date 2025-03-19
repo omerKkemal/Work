@@ -18,13 +18,15 @@
   </div>
   <header id="content1" style="display: none;">
     <div class="w3-display-container">
-      <a href="/logout" onclick="loading_animation();"><img width="15%" class="w3-display-topleft" src="{{ url_for('static', filename='img/back.svg') }}" alt=""></a>
+      <a onclick="loading_back();">
+        <img width="15%" class="w3-display-topleft" src="{{ url_for('static', filename='img/back.svg') }}" alt=""></a>
       <img width="100%" class="round2" src="{{ url_for('static', filename='img/logo.avif') }}">
     </div>
   </header>
   <main id="content2" class="main4" style="display: none;">
-    {% if role == "admin" %}
-      {% for resource in all_resources %}
+    {% if all_resources | length != 0 %}
+      {% if role == "admin" %}
+        {% for resource in all_resources %}
           <div class="w3-panel round ss" style="margin-left: 10px; margin-right: 10px;">
             <div style="display: flex; margin-top: 10px;">
               <img width="20%" src="{{ url_for('static', filename='img/pdf_icon.svg') }}" alt="file">
@@ -36,20 +38,23 @@
               <a style="background-color: rgb(229, 83, 83);" onclick="flaskApi_Delete('{{ resource[0] }}',11);" class="btn">Delete</a>
             </div>
           </div>
-      {% endfor %}
+        {% endfor %}
+      {% else %}
+        {% for resource in all_resources %}
+          <div class="w3-panel round ss" style="margin-left: 10px; margin-right: 10px;">
+            <div style="display: flex; margin-top: 10px;">
+              <img width="20%" src="{{ url_for('static', filename='img/pdf_icon.svg') }}" alt="file">
+              <h3>{{ resource[3] }}</h3>
+            </div>
+            <p style="text-align: initial;">{{ resource[2] }}</p>
+            <div style="padding-bottom: 15px; text-align: initial; display: flex;">
+              <a style="background-color: rgb(98, 248, 110); margin-left: 230px; margin-right: 10px;" href="{{ url_for('static',filename=resource[4])+'/'+resource[3] }}" download  class="btn">Download</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
     {% else %}
-      {% for resource in all_resources %}
-      <div class="w3-panel round ss" style="margin-left: 10px; margin-right: 10px;">
-        <div style="display: flex; margin-top: 10px;">
-          <img width="20%" src="{{ url_for('static', filename='img/pdf_icon.svg') }}" alt="file">
-          <h3>{{ resource[3] }}</h3>
-        </div>
-        <p style="text-align: initial;">{{ resource[2] }}</p>
-        <div style="padding-bottom: 15px; text-align: initial; display: flex;">
-          <a style="background-color: rgb(98, 248, 110); margin-left: 230px; margin-right: 10px;" href="{{ url_for('static',filename=resource[4])+'/'+resource[3] }}" download  class="btn">Download</a>
-        </div>
-      </div>
-      {% endfor %}
+      <h1>Empty: No Resource</h1>
     {% endif %}
   </main>
 </section>

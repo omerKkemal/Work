@@ -13,10 +13,9 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 from utility._templates_filters import getlist
-from utility.data_processor import read_from_json
+from utility.data_processor import read_from_json,allowed_file
 from database.modle import Student, Teacher, CreatAssessment, Assessment, Sections, thought, Parent, Subjects, Resource
 from database.manage_db import var, engine
-from utility.data_processor import allowed_file
 
 
 Admin = Blueprint(
@@ -508,7 +507,10 @@ def edit_teacher_basic_info(ID=None):
     else:
         return redirect(url_for('Login.login'))
 
-@Admin.route('/admin/panal/resource_option')
+
+# resource
+
+@Admin.route('/resource_option')
 def resource_option():
     if 'username' in session:
         if session['role'] == "admin":
@@ -517,7 +519,7 @@ def resource_option():
         ...
 
 
-@Admin.route("/admin/panal/add_resource",methods=['POST','GET'])
+@Admin.route("/add_resource",methods=['POST','GET'])
 def add_resourc():
     try:
         if "username" in session:
@@ -578,7 +580,7 @@ def add_resourc():
         return str(e)
 
 
-@Admin.route("/admin/panal/view_resource")
+@Admin.route("/view_resource")
 def view_resour():
     try:
         if "username" in session:
@@ -637,7 +639,7 @@ def delete_resource():
                     return {'message': 'Resource not found'}, 404  # Return error if Teacher doesn't exist
                 
                 if 'work_sheet' in resource[0][4]:
-                    path = var.WORK_SHEET_PATH
+                     path = os.path.join(var.WORK_SHEET_PATH,resource[0][3])
                 else:
                     path = os.path.join(var.EXTRA_RESOURCE_PATH ,resource[0][3])
                 if os.path.exists(path):

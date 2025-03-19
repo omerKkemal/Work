@@ -3,7 +3,7 @@ from email.message import EmailMessage
 from sqlalchemy.orm import sessionmaker
 from types import SimpleNamespace
 import json
-#import openpyxl
+import openpyxl
 
 from utility.setting import Setting
 from utility._templates_filters import getlist
@@ -129,7 +129,7 @@ def login_input_filter():
 
 
 
-def cheack_for_rank(grade,section,teacher_id):
+def cheack_commplited_assement(grade,section,teacher_id):
     
     try:
         exit = _session.query(Assessment).filter_by(

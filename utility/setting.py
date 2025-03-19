@@ -36,9 +36,9 @@ class Setting:
         These settings can be used across the application for consistent configuration.
         """
         # app setting
-        self.SECRAT_KEY = random.choices(
+        self.SECRAT_KEY = ''.join(random.choices(
             string.ascii_uppercase + string.ascii_lowercase + string.digits, k=100
-        )
+        ))
 
         # event messages
         self.NONE_LOGIN_MESSAGE = "login first"

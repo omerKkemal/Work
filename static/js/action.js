@@ -18,6 +18,13 @@ function goBack(){
     window.location.href=document.referrer;
 }
 
+function loading_back(){
+    loading.style.display = "flex";
+    content1.style.display = "none";
+    content2.style.display = "none";
+    goBack();
+}
+
 function info(){
     window.alert('The Opration was Successful');
     goBack();
